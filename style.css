@@ -8,7 +8,7 @@ body {
     flex-direction: column;
 }
 
-/* --- HEADER AND NAVIGATION --- */
+
 .header {
     background-color: #fffacd; /* Світло-жовтий колір */
     border-bottom: 1px solid #ddd;
@@ -16,6 +16,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Важливо для позиціонування модального вікна */
 }
 
 .header-left {
@@ -70,6 +71,59 @@ body {
     cursor: pointer;
 }
 
+/* --- SEARCH MODAL STYLES --- */
+.search-modal {
+    position: absolute;
+    top: 120%; /* Розміщуємо під хедером */
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+    display: none; /* За замовчуванням приховано */
+}
+
+.search-input-main {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.search-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-tabs button {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #333;
+    border-bottom: 2px solid transparent;
+}
+
+.search-tabs button.active {
+    color: #ff9800;
+    border-bottom: 2px solid #ff9800;
+}
+
+.search-info {
+    font-size: 0.9em;
+    color: #777;
+    padding: 10px 0;
+}
+
 /* --- MAIN CONTENT LAYOUT --- */
 .container {
     padding: 20px;
@@ -90,6 +144,9 @@ body {
     display: block;
     overflow: hidden;
     border-radius: 4px;
+}
+.manga-card {
+    width: auto; 
 }
 
 .manga-card img {
@@ -122,8 +179,18 @@ body {
 
 /* --- INDEX.HTML SPECIFIC STYLES --- */
 .top-updates-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 15px;
+    padding-bottom: 10px;
 }
+
+.top-updates-grid .manga-card {
+    flex-shrink: 0;
+    width: 160px; 
+}
+
 
 .index-sections {
     display: flex;
@@ -175,7 +242,17 @@ body {
     color: #777;
 }
 
-/* --- CATALOG.HTML SPECIFIC STYLES --- */
+
+
+
+
+/* --- GRID STYLES --- */
+.section-grid {
+    display: grid;
+    gap: 20px;
+}
+
+
 .catalog-layout {
     display: flex;
     flex-direction: row-reverse; 
