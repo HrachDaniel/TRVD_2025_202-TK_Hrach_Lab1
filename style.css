@@ -10,13 +10,13 @@ body {
 
 
 .header {
-    background-color: #fffacd; /* Світло-жовтий колір */
+    background-color: #fffacd; 
     border-bottom: 1px solid #ddd;
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* Важливо для позиціонування модального вікна */
+    position: relative; 
 }
 
 .header-left {
@@ -28,7 +28,7 @@ body {
 .header-logo {
     font-size: 1.5em;
     font-weight: bold;
-    color: #000000; /* Чорний колір */
+    color: #000000; 
     margin-right: 30px;
 }
 
@@ -71,10 +71,10 @@ body {
     cursor: pointer;
 }
 
-/* --- SEARCH MODAL STYLES --- */
+/* --- SEARCH MODAL --- */
 .search-modal {
     position: absolute;
-    top: 120%; /* Розміщуємо під хедером */
+    top: 120%; 
     width: 50%;
     left: 50%;
     transform: translateX(-50%);
@@ -84,7 +84,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     z-index: 1000;
-    display: none; /* За замовчуванням приховано */
+    display: none; 
 }
 
 .search-input-main {
@@ -124,19 +124,16 @@ body {
     padding: 10px 0;
 }
 
-/* --- MAIN CONTENT LAYOUT --- */
 .container {
     padding: 20px;
     flex-grow: 1; 
 }
 
-/* --- GRID STYLES --- */
 .section-grid {
     display: grid;
     gap: 20px;
 }
 
-/* --- BOOK CARD STYLES --- */
 .manga-card {
     position: relative;
     text-decoration: none;
@@ -177,7 +174,6 @@ body {
     text-align: center;
 }
 
-/* --- INDEX.HTML SPECIFIC STYLES --- */
 .top-updates-grid {
     display: flex;
     overflow-x: auto;
@@ -274,14 +270,14 @@ body {
 }
 
 .search-input {
-    width: 80%; /* Зменшена ширина поля пошуку */
+    width: 80%; 
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-/* Sidebar Filter Styles */
+/* Sidebar Filter */
 .filter-group {
     margin-bottom: 20px;
     padding-bottom: 10px;
@@ -318,9 +314,9 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }
 
-/* --- FOOTER STYLES (За зразком Header) --- */
+/* --- FOOTER STYLES --- */
 .footer {
-    background-color: #fffacd; /* Світло-жовтий колір */
+    background-color: #fffacd; 
     border-top: 1px solid #ddd;
     padding: 10px 20px;
     margin-top: auto;
@@ -332,7 +328,7 @@ body {
     align-items: center;
     font-size: 0.9em;
     color: #666;
-    padding: 0 20px; /* Додатковий відступ для вмісту футера */
+    padding: 0 20px; 
 }
 
 .footer-nav a {
@@ -345,12 +341,12 @@ body {
 .profile-sidebar {
     position: fixed;
     top: 0;
-    right: -300px; /* Приховано за правим краєм екрану */
-    width: 300px; /* Ширина сайдбару */
+    right: -300px; 
+    width: 300px; 
     height: 100%;
     background-color: #fff;
     box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 2000; /* Вище, ніж пошукове модальне вікно */
+    z-index: 2000; 
     transition: right 0.3s ease-in-out;
     padding: 20px;
     box-sizing: border-box;
@@ -359,7 +355,7 @@ body {
 }
 
 .profile-sidebar.open {
-    right: 0; /* Висувається на екран */
+    right: 0;
 }
 
 .sidebar-header {
@@ -406,7 +402,7 @@ body {
     align-items: center;
 }
 
-/* Стилі для простого перемикача (як чекбокс-слайдер) */
+/* Стилі для перемикача */
 .switch {
   position: relative;
   display: inline-block;
@@ -453,7 +449,7 @@ input:checked + .slider:before {
 }
 
 
-/* --- DARK THEME STYLES (Основа) --- */
+/* --- DARK THEME STYLES --- */
 body.dark-theme {
     background-color: #333;
     color: #f4f4f4;
