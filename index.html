@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library | Головна</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages/style.css">
 </head>
 <body>
 
@@ -12,13 +12,13 @@
         <div class="header-left">
             <span class="header-logo">Library</span>
             <nav class="main-nav">
-                <a href="catalog.html">Каталог</a>
+                <a href="pages/catalog.html">Каталог</a>
                 <a href="#" id="search-link">Пошук</a>
             </nav>
         </div>
         <div class="header-right">
-            <a href="login.html" class="btn-login" style="text-decoration: none;">Вхід</a>
-            <a href="register.html" class="btn-register" style="text-decoration: none;">Реєстрація</a>
+            <a href="pages/login.html" class="btn-login" style="text-decoration: none;">Вхід</a>
+            <a href="pages/register.html" class="btn-register" style="text-decoration: none;">Реєстрація</a>
         </div>
         
         <div id="search-modal" class="search-modal">
@@ -36,7 +36,7 @@
         <h2>Оновлення за сьогодні</h2>
         <div class="section-grid top-updates-grid">
             
-            <a href="preview.html" class="manga-card">
+            <a href="pages/preview.html" class="manga-card">
                 <img src="https://book24.ua/upload/iblock/0e1/0e1d260914818c00aca1bb76e08c39be.jpg" alt="Книга 1">
                 <div class="manga-card-info">
                     <h4>Темний</h4>
@@ -52,7 +52,7 @@
                 </div>
             </a>
 
-                        <a href="preview.html" class="manga-card">
+                        <a href="pages/preview.html" class="manga-card">
                 <img src="https://book24.ua/upload/iblock/0e1/0e1d260914818c00aca1bb76e08c39be.jpg" alt="Книга 1">
                 <div class="manga-card-info">
                     <h4>Темний</h4>
@@ -76,7 +76,7 @@
                 </div>
             </a>
 
-                        <a href="preview.html" class="manga-card">
+                        <a href="pages/preview.html" class="manga-card">
                 <img src="https://book24.ua/upload/iblock/0e1/0e1d260914818c00aca1bb76e08c39be.jpg" alt="Книга 1">
                 <div class="manga-card-info">
                     <h4>Темний</h4>
@@ -100,7 +100,7 @@
                 </div>
             </a>
 
-                        <a href="preview.html" class="manga-card">
+                        <a href="pages/preview.html" class="manga-card">
                 <img src="https://book24.ua/upload/iblock/0e1/0e1d260914818c00aca1bb76e08c39be.jpg" alt="Книга 1">
                 <div class="manga-card-info">
                     <h4>Темний</h4>
@@ -124,7 +124,7 @@
                 </div>
             </a>
 
-                        <a href="preview.html" class="manga-card">
+                        <a href="pages/preview.html" class="manga-card">
                 <img src="https://book24.ua/upload/iblock/0e1/0e1d260914818c00aca1bb76e08c39be.jpg" alt="Книга 1">
                 <div class="manga-card-info">
                     <h4>Темний</h4>
@@ -138,7 +138,7 @@
             <div class="section-block">
                 <h3>Зараз читають</h3> 
                 
-                <a href="preview.html" class="list-item">
+                <a href="pages/preview.html" class="list-item">
                     <img src="https://book24.ua/upload/iblock/0e1/0e1d260914818c00aca1bb76e08c39be.jpg" alt="Книга 9">
                     <div class="list-item-info">
                         <h4>Книга 9</h4>
@@ -233,10 +233,9 @@
     </footer>
 <script>
         document.getElementById('search-link').addEventListener('click', function(event) {
-            event.preventDefault(); // Запобігаємо переходу за посиланням
+            event.preventDefault();
             var searchModal = document.getElementById('search-modal');
             
-            // Тоггл видимості вікна пошуку
             if (searchModal.style.display === 'block') {
                 searchModal.style.display = 'none';
             } else {
@@ -244,12 +243,10 @@
             }
         });
 
-        // Додатково: приховування вікна пошуку при кліку поза ним
         document.addEventListener('click', function(event) {
             var searchLink = document.getElementById('search-link');
             var searchModal = document.getElementById('search-modal');
             
-            // Якщо клік відбувся поза посиланням і поза модальним вікном, приховуємо його
             if (searchModal.style.display === 'block' && 
                 !searchModal.contains(event.target) && 
                 !searchLink.contains(event.target)) {

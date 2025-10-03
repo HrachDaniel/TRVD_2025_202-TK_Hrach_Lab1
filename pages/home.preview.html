@@ -6,7 +6,6 @@
     <title>Темний</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Стилі, специфічні для сторінки preview */
         
         .preview-content {
             padding: 20px;
@@ -20,7 +19,7 @@
         }
 
         .preview-image {
-            width: 200px; /* Фіксована ширина обкладинки */
+            width: 200px;
             flex-shrink: 0;
             border-radius: 4px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -55,7 +54,7 @@
         .rating-box {
             display: flex;
             align-items: center;
-            background-color: #ff9800; /* Помаранчевий */
+            background-color: #ff9800; 
             color: white;
             padding: 5px 10px;
             border-radius: 4px;
@@ -67,7 +66,6 @@
             margin-right: 5px;
         }
 
-        /* Навігація в блоці інформації (О тайтле, Главы, т.д.) */
         .preview-nav {
             display: flex;
             gap: 20px;
@@ -84,11 +82,10 @@
 
         .preview-nav a:hover,
         .preview-nav a.active {
-            color: #f06292; /* Рожевий */
+            color: #f06292;
             border-bottom: 2px solid #f06292;
         }
 
-        /* Опис та теги */
         .description p {
             line-height: 1.5;
             color: #333;
@@ -109,7 +106,6 @@
             text-decoration: none;
         }
 
-        /* Бічний блок (Статус, Перекладачі, т.д.) */
         .preview-layout {
             display: flex;
             gap: 30px;
@@ -155,43 +151,15 @@
         }
         
         .btn-read {
-            background-color: #ff9800; /* Помаранчевий */
+            background-color: #ff9800; 
             color: white;
         }
         
         .btn-add {
-            background-color: #3498db; /* Синій */
+            background-color: #3498db;
             color: white;
         }
-/* Стилі для перекладачів */
-        .translators-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 10px;
-        }
 
-        .translator-item {
-            text-align: center;
-            text-decoration: none;
-            color: #333;
-        }
-
-        .translator-item img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid #ddd;
-        }
-        
-        .translator-item span {
-            display: block;
-            font-size: 0.8em;
-            margin-top: 5px;
-        }
-
-        /* Стилі для списку деталей (Тип, Формат, Випуск...) */
         .details-list {
             list-style: none;
             padding: 0;
@@ -215,7 +183,6 @@
         }
 
 
-        /* Медіазапити для адаптивності */
         @media (max-width: 900px) {
             .preview-layout {
                 flex-direction: column;
@@ -249,13 +216,12 @@
         <div class="header-left">
             <span class="header-logo">Library</span>
             <nav class="main-nav">
-                <a href="catalog.html">Каталог</a>
+                <a href="home.catalog.html">Каталог</a>
                 <a href="#" id="search-link">Пошук</a>
             </nav>
         </div>
         <div class="header-right">
-            <a href="login.html" class="btn-login" style="text-decoration: none;">Вхід</a>
-            <a href="register.html" class="btn-register" style="text-decoration: none;">Реєстрація</a>
+            <a href="#" id="profile-link" class="btn-login" style="text-decoration: none;">Профіль</a>
         </div>
         
         <div id="search-modal" class="search-modal">
@@ -265,7 +231,26 @@
             <p class="search-info">Розширений пошук тайтлів знаходиться в каталозі</p>
         </div>
     </header>
-
+    <aside id="profile-sidebar" class="profile-sidebar">
+        <div class="sidebar-header">
+            <h3>Профіль</h3>
+            <button class="sidebar-close" id="sidebar-close">&times;</button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#">📖 Прочитане</a>
+            <a href="#">⭐ Збережене</a>
+            <a href="index.html">🚪 Вихід</a>
+        </nav>
+        
+        <div class="theme-switch-block">
+            <span>Темне оформлення</span>
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </aside>
     <div class="container preview-content">
         
         <div class="cover-section">
@@ -359,9 +344,8 @@
             </nav>
         </div>
     </footer>
-
     <script>
-        document.getElementById('search-link').addEventListener('click', function(event) {
+                document.getElementById('search-link').addEventListener('click', function(event) {
             event.preventDefault(); 
             var searchModal = document.getElementById('search-modal');
             if (searchModal.style.display === 'block') {
@@ -381,6 +365,26 @@
                 searchModal.style.display = 'none';
             }
         });
+
+            document.getElementById('profile-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('profile-sidebar').classList.toggle('open');
+        });
+
+        document.getElementById('sidebar-close').addEventListener('click', function() {
+            document.getElementById('profile-sidebar').classList.remove('open');
+        });
+        
+        document.getElementById('theme-toggle').addEventListener('change', function() {
+            document.body.classList.toggle('dark-theme', this.checked);
+            
+            localStorage.setItem('theme', this.checked ? 'dark' : 'light');
+        });
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-theme');
+            document.getElementById('theme-toggle').checked = true;
+        }
     </script>
 </body>
 </html>
