@@ -44,6 +44,10 @@ body {
     font-weight: 500;
 }
 
+.main-nav a:hover {
+background-image: linear-gradient(to bottom, rgb(255, 102, 0), rgb(255, 208, 0)); 
+}
+
 .header-right {
     flex-basis: 240px;
     text-align: right;
@@ -491,6 +495,10 @@ body.dark-theme .btn-login {
     color: white;
     border: none;
     cursor: pointer;
+}
+
+body.dark-theme .main-nav a:hover {
+background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(36, 10, 114)); 
 }
 
 body.dark-theme .header-logo,
