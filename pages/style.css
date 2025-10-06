@@ -458,6 +458,27 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
+        .details-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .details-list li {
+            padding: 5px 0;
+            border-bottom: 1px dotted #eee;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95em;
+        }
+
+        .details-list li strong {
+            color: #777;
+            font-weight: normal;
+        }
+        .details-list li span {
+            font-weight: bold;
+            color: #333;
+        }
 
 /* --- DARK THEME STYLES --- */
 body.dark-theme {
@@ -510,8 +531,13 @@ body.dark-theme h3,
 body.dark-theme h4, 
 body.dark-theme p,
 body.dark-theme li,
-body.dark-theme .sidebar-header h3 {
+body.dark-theme .sidebar-header h3,
+body.dark-theme .details-list li span {
     color: #f4f4f4;
+}
+
+body.dark-theme .details-list li strong {
+    color: #929292;
 }
 
 body.dark-theme .sidebar-nav a:hover {
