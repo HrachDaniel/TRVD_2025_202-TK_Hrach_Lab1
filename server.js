@@ -12,7 +12,7 @@ app.set('views', __dirname + '/views');
 mongoose.connect('mongodb://localhost:27017/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.get('/', (req, res) => {
-    res.render('index.html', { title: 'Головна сторінка' });
+    res.render('users', { title: 'Головна сторінка' });
 });
 
 app.listen(port, () => {
