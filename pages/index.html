@@ -233,10 +233,9 @@
     </footer>
 <script>
         document.getElementById('search-link').addEventListener('click', function(event) {
-            event.preventDefault(); // Запобігаємо переходу за посиланням
+            event.preventDefault();
             var searchModal = document.getElementById('search-modal');
             
-            // Тоггл видимості вікна пошуку
             if (searchModal.style.display === 'block') {
                 searchModal.style.display = 'none';
             } else {
@@ -244,12 +243,10 @@
             }
         });
 
-        // Додатково: приховування вікна пошуку при кліку поза ним
         document.addEventListener('click', function(event) {
             var searchLink = document.getElementById('search-link');
             var searchModal = document.getElementById('search-modal');
             
-            // Якщо клік відбувся поза посиланням і поза модальним вікном, приховуємо його
             if (searchModal.style.display === 'block' && 
                 !searchModal.contains(event.target) && 
                 !searchLink.contains(event.target)) {
